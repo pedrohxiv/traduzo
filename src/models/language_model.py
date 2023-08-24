@@ -8,9 +8,11 @@ class LanguageModel(AbstractModel):
     def __init__(self, data: dict = {}):
         self.data = data
 
-    # Req. 2
     def to_dict(self):
-        raise NotImplementedError
+        return {
+            "name": self.data["name"],
+            "acronym": self.data["acronym"]
+        }
 
     # Req. 3
     @classmethod
