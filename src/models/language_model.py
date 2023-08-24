@@ -6,7 +6,7 @@ class LanguageModel(AbstractModel):
     _collection = db["languages"]
 
     def __init__(self, data: dict = {}):
-        self.data = data
+        super().__init__(data)
 
     def to_dict(self):
         return {
@@ -14,7 +14,7 @@ class LanguageModel(AbstractModel):
             "acronym": self.data["acronym"]
         }
 
-    # Req. 3
     @classmethod
     def list_dicts(cls):
-        raise NotImplementedError
+        languages = cls.find()
+        return [language.to_dict() for language in languages]
