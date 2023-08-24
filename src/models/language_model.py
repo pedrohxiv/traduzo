@@ -2,7 +2,7 @@
 # from database.db import db
 
 
-# Req. 1
+# Req 1
 class LanguageModel:
     def __init__(self):
         raise NotImplementedError
